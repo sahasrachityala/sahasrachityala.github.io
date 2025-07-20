@@ -31,40 +31,41 @@
       padding: 10px;
     }
 
-    .button {
+       .button-group {
       margin-top: 30px;
     }
 
     button {
-      font-family: Arial, sans-serif;
+      font-family: Fantasy;
       font-size: 18px;
       padding: 10px 20px;
+      margin: 10px;
       background-color: white;
-      color: #3399ff;
-      border: 2px solid #3399ff;
+      color: #333;
+      border: 2px solid #333;
       border-radius: 8px;
       cursor: pointer;
     }
 
     button:hover {
-      background-color: #3399ff;
+      background-color: #333;
       color: white;
     }
   </style>
 </head>
 <body>
 
-  <h1>Hello, my name is Sahasra Chityala </h1>
-    <img src=" picture.HEIC">
-
+  <img src="your-photo.jpg" alt="My Profile Picture">
+  <h1>Hello, my name is [Your Name]</h1>
   <p>
     I am learning how to code and building projects that solve real-world problems.  
-    This is my website where you can learn more about me and my work.
+    This is my personal website where you can learn more about me and my work.
   </p>
-  
-   <button> Projects </button>
-   <button> Experience</button>
 
+  <div class="button-group">
+    <a href="projects.html"><button>My Projects</button></a>
+    <a href="experience.html"><button>My Experience</button></a>
+  </div>
 
 </body>
 </html>
