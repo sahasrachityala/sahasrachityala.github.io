@@ -28,22 +28,35 @@
       height: 280px;
       border: 4px solid #3399ff;
       display: block;
-      margin: 0 auto 15px auto; /* centers and adds space below image */
+      margin: 0 auto 15px auto;
     }
 
-    .project p, 
+    .project p {
+      text-align: center;
+      margin-bottom: 8px;
+      color: black;
+    }
+
     .project a {
       text-align: center;
       display: block;
+      color: #3399ff;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 5px;
     }
 
-    a {
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
 
-    a:hover {
+    .back-link:hover {
       text-decoration: underline;
     }
   </style>
@@ -73,7 +86,8 @@
     <a href="https://github.com/sahasrachityala/sahasrachityala.github.io">View on GitHub</a>
   </div>
 
-  <p><a href="index.html">← Back to Home</a></p>
+  <p><a class="back-link" href="index.html">← Back to Home</a></p>
 
 </body>
 </html>
+
