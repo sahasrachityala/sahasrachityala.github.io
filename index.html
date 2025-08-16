@@ -37,34 +37,30 @@
     }
 
     .typewriter {
-      display: inline-block;
       font-size: 18px;
       color: white;
       max-width: 500px;
-      margin: 0 auto;
+      margin: 20px auto;
       padding: 15px;
-      border-right: 3px solid white;
-      white-space: normal; /* allow multiple lines */
-      overflow: hidden;
-      animation: typing 6s steps(80, end) forwards, blink 0.75s step-end infinite;
-      animation-delay: 1.2s;
+      line-height: 1.5;
+      min-height: 100px; /* keeps space reserved before animation finishes */
     }
 
-    @keyframes typing {
-      from { width: 0ch; }
-      to { width: 80ch; } /* type out ~80 characters */
+    .typewriter span {
+      opacity: 0;
+      display: inline-block;
+      transition: opacity 0.2s ease;
     }
 
-    @keyframes blink {
-      from, to { border-color: transparent; }
-      50% { border-color: white; }
+    .typewriter span.show {
+      opacity: 1;
     }
 
     .button-group {
       margin-top: 30px;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
-      animation-delay: 7s;
+      animation-delay: 3s; /* Buttons fade after typing */
     }
 
     @keyframes fadeIn {
@@ -94,11 +90,11 @@
 
   <h1> Sahasra Chityala </h1>
   
-  <img src="pppicture.jpg" alt="Profile Picture">
+  <img src="ppppicture.jpg" alt="Profile Picture">
 
-  <p class="typewriter">
-    Welcome to my portfolio!  
-    This is where I share my journey and passion in computer science,  
+  <p class="typewriter" id="typewriter-text">
+    Welcome to my portfolio! 
+    This is where I share my journey and passion in computer science, 
     one project at a time!
   </p>
 
@@ -107,5 +103,22 @@
     <a href="experience.html"><button>My Experience</button></a>
   </div>
 
+  <script>
+    const textElement = document.getElementById("typewriter-text");
+    const text = textElement.textContent;
+    textElement.textContent = "";
+
+    [...text].forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      textElement.appendChild(span);
+
+      setTimeout(() => {
+        span.classList.add("show");
+      }, i * 40); // speed (40ms per character)
+    });
+  </script>
+
 </body>
 </html>
+
