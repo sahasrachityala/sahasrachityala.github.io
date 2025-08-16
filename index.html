@@ -113,15 +113,22 @@
     textElement.textContent = "";
 
     // Split into spans for animation
-    [...text].forEach((char, i) => {
-      const span = document.createElement("span");
-      span.textContent = char;
-      textElement.appendChild(span);
+   [...text].forEach((char, i) => {
+  const span = document.createElement("span");
+  
+  // keep spaces visible
+  if (char === " ") {
+    span.innerHTML = "&nbsp;"; 
+  } else {
+    span.textContent = char;
+  }
 
-      setTimeout(() => {
-        span.classList.add("show");
-      }, i * 50); // speed (50ms per character)
-    });
+  textElement.appendChild(span);
+
+  setTimeout(() => {
+    span.classList.add("show");
+  }, i * 50); // adjust speed here
+});
   </script>
 
 </body>
