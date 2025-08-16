@@ -5,7 +5,7 @@
   <style>
     body {
       background-color: #444657;
-      font-family: Fantasy, cursive;
+      font-family: Fantasy, cursive; 
       text-align: center;
       padding: 50px;
     }
@@ -39,29 +39,30 @@
     .typewriter {
       font-size: 18px;
       color: white;
-      max-width: 500px;
+      max-width: 600px;
       margin: 20px auto;
       padding: 15px;
-      line-height: 1.5;
-      min-height: 100px; 
-      letter-spacing: 2px; 
-
+      line-height: 1.6;
+      min-height: 100px;
+    }
 
     .typewriter span {
       opacity: 0;
       display: inline-block;
-      transition: opacity 0.2s ease;
+      transform: scale(0.5);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .typewriter span.show {
       opacity: 1;
+      transform: scale(1);
     }
 
     .button-group {
       margin-top: 30px;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
-      animation-delay: 3s; 
+      animation-delay: 3s;
     }
 
     @keyframes fadeIn {
@@ -91,7 +92,7 @@
 
   <h1> Sahasra Chityala </h1>
   
-  <img src="ppppicture.jpg" alt="Profile Picture">
+  <img src="picture.jpg" alt="Profile Picture">
 
   <p class="typewriter" id="typewriter-text">
     Welcome to my portfolio! 
@@ -105,10 +106,12 @@
   </div>
 
   <script>
+    // Grab text
     const textElement = document.getElementById("typewriter-text");
     const text = textElement.textContent;
     textElement.textContent = "";
 
+    // Split into spans for animation
     [...text].forEach((char, i) => {
       const span = document.createElement("span");
       span.textContent = char;
@@ -116,7 +119,7 @@
 
       setTimeout(() => {
         span.classList.add("show");
-      }, i * 40); // speed (40ms per character)
+      }, i * 50); // speed (50ms per character)
     });
   </script>
 
