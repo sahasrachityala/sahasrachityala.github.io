@@ -36,23 +36,23 @@
       margin-top: 20px;
     }
 
-    p {
+    .typewriter {
+      display: inline-block;
       font-size: 18px;
       color: white;
       max-width: 500px;
       margin: 0 auto;
       padding: 15px;
       border-right: 3px solid white;
-      white-space: nowrap;
+      white-space: normal; /* allow multiple lines */
       overflow: hidden;
-      width: 0;
-      animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
+      animation: typing 6s steps(80, end) forwards, blink 0.75s step-end infinite;
       animation-delay: 1.2s;
     }
 
     @keyframes typing {
-      from { width: 0; }
-      to { width: 500px; }
+      from { width: 0ch; }
+      to { width: 80ch; } /* type out ~80 characters */
     }
 
     @keyframes blink {
@@ -64,7 +64,7 @@
       margin-top: 30px;
       opacity: 0;
       animation: fadeIn 2s ease forwards;
-      animation-delay: 5s;
+      animation-delay: 7s;
     }
 
     @keyframes fadeIn {
@@ -94,10 +94,12 @@
 
   <h1> Sahasra Chityala </h1>
   
-  <img src="ppppicture.jpg" alt="Profile Picture">
+  <img src="pppicture.jpg" alt="Profile Picture">
 
-  <p>
-    Welcome to my portfolio! This is where I share my journey and passion in computer science, one project at a time!
+  <p class="typewriter">
+    Welcome to my portfolio!  
+    This is where I share my journey and passion in computer science,  
+    one project at a time!
   </p>
 
   <div class="button-group">
