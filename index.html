@@ -10,6 +10,7 @@
       padding: 50px;
     }
 
+    /* Image popup */
     img {
       width: 200px;
       height: 200px;
@@ -36,7 +37,8 @@
       margin-top: 20px;
     }
 
-    .typewriter {
+    /* Whole text fade-in */
+    .text {
       font-size: 18px;
       color: white;
       max-width: 600px;
@@ -45,25 +47,17 @@
       line-height: 1.6;
       min-height: 100px;
       letter-spacing: 2px;
-    }
-
-    .typewriter span {
       opacity: 0;
-      display: inline-block;
-      transform: scale(0.5);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 2s; /* shows after image */
     }
 
-    .typewriter span.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
+    /* Buttons fade in last */
     .button-group {
       margin-top: 30px;
       opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 3s;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 4s;
     }
 
     @keyframes fadeIn {
@@ -95,7 +89,7 @@
   
   <img src="picture.jpg" alt="Profile Picture">
 
-  <p class="typewriter" id="typewriter-text">
+  <p class="text">
     Welcome to my portfolio! 
     This is where I share my journey and passion in computer science, 
     one project at a time!
@@ -106,31 +100,7 @@
     <a href="experience.html"><button>My Experience</button></a>
   </div>
 
-  <script>
-    // Grab text
-    const textElement = document.getElementById("typewriter-text");
-    const text = textElement.textContent;
-    textElement.textContent = "";
-
-    // Split into spans for animation
-   [...text].forEach((char, i) => {
-  const span = document.createElement("span");
-  
-  // keep spaces visible
-  if (char === " ") {
-    span.innerHTML = "&nbsp;"; 
-  } else {
-    span.textContent = char;
-  }
-
-  textElement.appendChild(span);
-
-  setTimeout(() => {
-    span.classList.add("show");
-  }, i * 50); // adjust speed here
-});
-  </script>
-
 </body>
 </html>
+
 
